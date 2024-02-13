@@ -8,7 +8,7 @@ export default function App() {
   return (
    
       <View>
-        <Text>Student Management App</Text>
+       
         <Registration/>
       </View>
 
