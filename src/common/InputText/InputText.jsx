@@ -3,7 +3,7 @@ import { TextInput } from 'react-native-paper';
 
 import React from 'react'
 
-export default function InputText({lable,value,onChangeText,secureTextEntry,style}) {
+export default function InputText({lable,value,onChangeText,secureTextEntry,style,icon}) {
    
   return (
    
@@ -14,6 +14,7 @@ export default function InputText({lable,value,onChangeText,secureTextEntry,styl
       onChangeText={onChangeText}
       secureTextEntry={secureTextEntry}
       style={style}
+      icon={icon}
     />
    
   )
