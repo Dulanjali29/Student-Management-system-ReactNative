@@ -9,8 +9,8 @@ export default function App() {
   return (
    
       <View>
-       <Login/>
-        {/* <Registration/> */}
+       {/* <Login/> */}
+        <Registration/>
       </View>
 
    

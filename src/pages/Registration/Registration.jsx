@@ -5,6 +5,7 @@ import React from 'react'
 import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
 import IconBtn from '../../common/IconButton/IconButton';
+import Icon from 'react-native-vector-icons/'
 
 
 const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
@@ -25,7 +26,7 @@ export default function Registration() {
             <View style={styles.buttonicon}>
                 <IconButton
                     style={styles.iconbtn}
-                    icon="camera"
+                    
                     size={20}
                     onPress={close}
                 />
@@ -44,7 +45,7 @@ export default function Registration() {
                         value={name}
                         lable={"User name"}
                         onChangeText={(val) => setName(val)}
-
+                       
                     />
                     <InputText
                         style={styles.txt}
@@ -67,6 +68,7 @@ export default function Registration() {
                 <View style={styles.btn}>
 
                     <MyButton
+                    mode={"contained"}
                         style={styles.btn_in}
                         text={"SIGN UP"}
                         textColor={"white"}
@@ -85,7 +87,19 @@ export default function Registration() {
                 </View>
                 <View style={styles.text} >
                     <Text variant="bodyLarge" style={{ color: '#5A8385', marginBottom: 10 }} >Already have an account ? </Text>
-                    <Text variant="titleLarge" style={{ color: '#281C65', marginBottom: 10 }} > Sign In</Text>
+                    <View>
+                    <MyButton
+                      
+                        style={styles.btn_in}
+                        text={"Sign In"}
+                        textColor={"#281C65"}
+                        onPress={signUp}
+                        mode={"text"}
+                        
+                    />
+                    </View>
+                  
+                  
                 </View>
             </View>
 

@@ -1,6 +1,7 @@
 import { View, Text } from 'react-native'
 import { TextInput } from 'react-native-paper';
 
+
 import React from 'react'
 
 export default function InputText({lable,value,onChangeText,secureTextEntry,style,icon}) {

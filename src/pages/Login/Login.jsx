@@ -11,6 +11,9 @@ export default function Login() {
     const login = () => {
 
     }
+    const signUp = () => {
+
+    }
     return (
         <View style={styles.mainView}>
 
@@ -52,8 +55,10 @@ export default function Login() {
                 />
             </View>
             <View style={styles.text} >
-                <Text variant="bodyLarge" style={{ color: '#5A8385', marginBottom: 10 }} >Already have an account ? </Text>
-                <Text variant="titleLarge" style={{ color: '#281C65', marginBottom: 10 }} > Sign Up Now</Text>
+                <Text variant="bodyLarge" style={{ color: '#5A8385', marginBottom: 10  }} >Already have an account ? </Text>
+                <Text
+                 variant="titleLarge"
+                  style={{ color: '#281C65', marginBottom: 10 }} > Sign Up Now</Text>
             </View>
         </View>
     )
@@ -69,7 +74,7 @@ const styles = StyleSheet.create({
         paddingBottom: 30,
     },
     txt: {
-        marginTop: 10,
+        marginTop: 20,
     },
     text: {
         alignItems: 'center',

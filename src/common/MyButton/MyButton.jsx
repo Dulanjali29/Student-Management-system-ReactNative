@@ -3,12 +3,12 @@ import { Button } from 'react-native-paper';
 import React from 'react'
 import { View } from 'react-native';
 
-export default function MyButton({icon,buttonColor,onPress,text,style,textColor}) {
+export default function MyButton({icon,buttonColor,onPress,text,style,textColor,mode}) {
   return (
    <View>
       <Button 
       
-      mode="contained" 
+      mode={mode}
       icon={icon} 
       buttonColor={buttonColor}
       textColor={textColor}
