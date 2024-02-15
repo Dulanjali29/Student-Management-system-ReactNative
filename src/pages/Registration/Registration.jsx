@@ -1,11 +1,11 @@
 import { View, StyleSheet, Image } from 'react-native'
-import { IconButton, Text,TextInput } from 'react-native-paper';
+import {  Text,TextInput } from 'react-native-paper';
 import { useState } from 'react';
 import React from 'react'
 import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
-import IconBtn from '../../common/IconButton/IconButton';
-import Icon from 'react-native-vector-icons/'
+
+
 
 
 const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
@@ -24,12 +24,7 @@ export default function Registration() {
 
         <View style={styles.mainView}>
             <View style={styles.buttonicon}>
-                <IconButton
-                    style={styles.iconbtn}
-                    
-                    size={20}
-                    onPress={close}
-                />
+               
             </View>
             <View style={styles.secondView}>
                 <View style={styles.text} >
@@ -45,7 +40,7 @@ export default function Registration() {
                         value={name}
                         lable={"User name"}
                         onChangeText={(val) => setName(val)}
-                       
+                        icon={"user"}
                     />
                     <InputText
                         style={styles.txt}
@@ -62,6 +57,7 @@ export default function Registration() {
                         secureTextEntry
                         
                     />
+                    
 
                 </View>
 
@@ -76,14 +72,14 @@ export default function Registration() {
                         onPress={signUp}
 
                     />
-                    {/* <MyButton
+                    <MyButton
                     style={styles.btn_in}
                     text={"CLOSE"}
                     textColor={"white"}
                     buttonColor={"#5A8385"}
                     onPress={close}
 
-                /> */}
+                />
                 </View>
                 <View style={styles.text} >
                     <Text variant="bodyLarge" style={{ color: '#5A8385', marginBottom: 10 }} >Already have an account ? </Text>

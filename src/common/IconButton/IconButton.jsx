@@ -1,12 +1,13 @@
 
 import React from 'react'
-import { IconButton} from 'react-native-paper';
+import { IconButton} from 'react-native';
 
-export default function IconBtn(icon,iconColor,size,onPress) {
+export default function IconBtn(name,color,size,onPress) {
   return (
     <IconButton
     icon={icon}
-    iconColor={iconColor}
+   name={name}
+    color={color}
     size={size}
     onPress={onPress}
   />
