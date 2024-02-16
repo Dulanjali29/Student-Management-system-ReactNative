@@ -37,27 +37,27 @@ export default function StudentAction() {
                            value={name}
                            lable={"Name"}
                            onChangeText={(val) => setName(val)}
-                           icon={"user"}
+                        
                        />
                        <InputText
                            style={styles.txt}
                            value={age}
                            lable={"Age"}
-                           onChangeText={(val) => setEmail(val)}
+                           onChangeText={(val) => setAge(val)}
    
                        />
                       <InputText
                            style={styles.txt}
                            value={address}
                            lable={"Address"}
-                           onChangeText={(val) => setEmail(val)}
+                           onChangeText={(val) => setAddress(val)}
    
                        />
                         <InputText
                            style={styles.txt}
                            value={contact}
                            lable={"Contact"}
-                           onChangeText={(val) => setEmail(val)}
+                           onChangeText={(val) => setContact(val)}
    
                        />
    
@@ -105,6 +105,7 @@ inputText: {
 },
 txt: {
     marginTop: 10,
+   
 },
 text: {
     alignItems: 'center',

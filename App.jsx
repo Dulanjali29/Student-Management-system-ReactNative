@@ -13,8 +13,8 @@ export default function App() {
       <View>
        {/* <Login/> */}
         {/* <Registration/> */}
-        <StudentSearch/>
-        {/* <StudentAction/> */}
+        {/* <StudentSearch/> */}
+        <StudentAction/>
       </View>
 
 

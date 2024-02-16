@@ -16,6 +16,7 @@ export default function InputText({lable,value,onChangeText,secureTextEntry,styl
       secureTextEntry={secureTextEntry}
       style={style}
       icon={icon}
+   
     />
    
   )
