@@ -4,25 +4,31 @@ import MyButton from '../../common/MyButton/MyButton'
 import { Card } from 'react-native-paper';
 
 
-export default function MyCard() {
+export default function MyCard({name,age,address,contact,onPressUpdate,onPressDelete}) {
   return (
-    <View style={styles.MainView}>
+    <View style={{padding:15}}>
       <Card>
 
         <View>
-          <Text style={styles.text}>Name : </Text>
-          <Text style={styles.text}>Age : </Text>
-          <Text style={styles.text}>Address : </Text>
-          <Text style={styles.text}>Contact : </Text>
+          <Text style={styles.text}>Name    : {name} </Text>
+          <Text style={styles.text}>Age        : {age} </Text>
+          <Text style={styles.text}>Address : {address} </Text>
+          <Text style={styles.text}>Contact  : {contact}</Text>
         </View>
-        <View>
+        <View style={{padding:10,}}> 
           <MyButton
             text={"UPDATE"}
+            textColor={"#281C65"}
             mode={"outlined"}
-            style={{}}
+            style={styles.btn}
+            onPress={onPressUpdate}
           />
           <MyButton
             text={"DELETE"}
+            textColor={"#281C65"}
+            mode={"outlined"}
+            style={styles.btn}
+            onPress={onPressDelete}
           />
         </View>
       </Card>
@@ -40,5 +46,10 @@ const styles = StyleSheet.create({
     marginTop: 10
 
   },
+  btn:{
+    borderColor:'#281C65',
+    marginBottom:10,
+   
+  }
 
 })
