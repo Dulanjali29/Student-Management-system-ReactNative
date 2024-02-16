@@ -18,6 +18,8 @@ export default function MyCard() {
         <View>
           <MyButton
             text={"UPDATE"}
+            mode={"outlined"}
+            style={{}}
           />
           <MyButton
             text={"DELETE"}
