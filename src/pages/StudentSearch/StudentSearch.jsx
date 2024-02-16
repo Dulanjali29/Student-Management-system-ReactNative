@@ -1,14 +1,24 @@
-import { View, Text } from 'react-native'
+import { View,Text, StyleSheet } from 'react-native'
 import React from 'react'
-import { Card } from 'react-native-paper';
+
+import Card from '../../component/MyCard/MyCard';
+
 export default function StudentSearch() {
   return (
-    <View>
-     <Card>
-      <View>
-        <Text></Text>
+    <View style={styles.view}>
+      <View style={styles.text}>
+      <Text variant="headlineMedium" style={{ color: '#281C65' }} >STUDENT DETAILS </Text>
       </View>
-     </Card>
+      <Card />
     </View>
   )
 }
+const styles=StyleSheet.create({
+  text:{
+      alignItems: 'center',
+    
+  },
+  view:{
+marginTop:10
+  }
+})

@@ -66,7 +66,7 @@ export default function StudentAction() {
                    <View style={styles.btn}>
    
                        <MyButton
-                       mode={"contained"}
+                           mode={"contained"}
                            style={styles.btn_in}
                            text={"SAVE"}
                            textColor={"white"}
