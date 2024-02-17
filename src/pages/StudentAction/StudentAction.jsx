@@ -12,7 +12,22 @@ export default function StudentAction() {
   const[contact,setContact]=useState("");
 
   const save=()=>{
+    instance.post('/student/save', {
+      name: name,
+      age:age,
+      address:address,
+      contact:contact,
 
+  })
+      .then(function (response) {
+
+          console.log(response.data);
+          console.log(" Student Saved Successfull");
+      })
+      .catch(function (error) {
+
+          console.log(error);
+      })
   }
   
   const clear=()=>{

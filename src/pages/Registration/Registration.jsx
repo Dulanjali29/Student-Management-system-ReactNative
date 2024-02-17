@@ -118,7 +118,13 @@ export default function Registration() {
                     <View style={styles.text} >
                         <Text variant="bodyLarge" style={{ color: '#5A8385', marginBottom: 10 }} >Already have an account ? </Text>
                         <View>
-                            <MyButton
+                            <TouchableOpacity>
+                                <Text
+                                    variant="titleLarge"
+                                    style={{ color: '#281C65', marginBottom: 10 }} > Sign In</Text>
+                            </TouchableOpacity>
+
+                            {/* <MyButton
 
                                 style={styles.btn_in}
                                 text={"Sign In"}
@@ -126,7 +132,7 @@ export default function Registration() {
                                 onPress={signUp}
                                 mode={"text"}
 
-                            />
+                            /> */}
                         </View>
 
 

@@ -14,4 +14,14 @@ const instance = axios.create({
       // saving error
     }
   };
+  const getData = async (response) => {
+    try {
+      const value = await AsyncStorage.getItem('my-key');
+      if (value !== null) {
+        // value previously stored
+      }
+    } catch (e) {
+      // error reading value
+    }
+  };
   export default instance;

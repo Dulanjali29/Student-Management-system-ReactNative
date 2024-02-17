@@ -1,6 +1,6 @@
-import { View,  StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { useState } from 'react';
-import {  Text } from 'react-native-paper';
+import { Text } from 'react-native-paper';
 import React from 'react'
 import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
@@ -15,28 +15,28 @@ export default function Login() {
         instance.post('/login', {
             email: email,
             password: password
-          })
+        })
             .then(function (response) {
-             storeData(response);
-             console.log("login success");
-             
+                storeData(response);
+                console.log("login success");
+
             })
             .catch(function (error) {
-              console.log(error);
-      
+                console.log(error);
+
             });
     }
 
     const storeData = async (response) => {
         try {
-          await AsyncStorage.setItem('my-key', response.data.token);
-          console.log(response.data.token);
+            await AsyncStorage.setItem('my-key', response.data.token);
+            console.log(response.data.token);
         } catch (e) {
-          // saving error
+            // saving error
         }
-      };
+    };
     const signUp = () => {
-      
+
     }
 
     return (
@@ -80,10 +80,13 @@ export default function Login() {
                 />
             </View>
             <View style={styles.text} >
-                <Text variant="bodyLarge" style={{ color: '#5A8385', marginBottom: 10  }} >Already have an account ? </Text>
-                <Text
-                 variant="titleLarge"
-                  style={{ color: '#281C65', marginBottom: 10 }} > Sign Up Now</Text>
+                <Text variant="bodyLarge" style={{ color: '#5A8385', marginBottom: 10 }} >Already have an account ? </Text>
+
+                <TouchableOpacity>
+                    <Text
+                        variant="titleLarge"
+                        style={{ color: '#281C65', marginBottom: 10 }} > Sign Up Now</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
     btn: {
         paddingTop: 20,
         marginTop: 30,
-     
+
     },
     img: {
         marginTop: 40,
