@@ -4,16 +4,41 @@ import {  Text } from 'react-native-paper';
 import React from 'react'
 import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
+import instance from '../../service/AxiosOrder/AxiosOrder';
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+
     const login = () => {
-
+        instance.post('/login', {
+            email: email,
+            password: password
+          })
+            .then(function (response) {
+             storeData(response);
+             console.log("login success");
+             
+            })
+            .catch(function (error) {
+              console.log(error);
+      
+            });
     }
+
+    const storeData = async (response) => {
+        try {
+          await AsyncStorage.setItem('my-key', response.data.token);
+          console.log(response.data.token);
+        } catch (e) {
+          // saving error
+        }
+      };
     const signUp = () => {
-
+      
     }
+
     return (
         <View style={styles.mainView}>
 

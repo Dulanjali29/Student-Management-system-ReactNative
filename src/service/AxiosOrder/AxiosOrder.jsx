@@ -6,4 +6,12 @@ const instance = axios.create({
     // headers:{Authorization:`Bearer ${token}`}
 
   });
+  const storeData = async (response) => {
+    try {
+      await AsyncStorage.setItem('my-key', response.data.token);
+      console.log(response.data.token);
+    } catch (e) {
+      // saving error
+    }
+  };
   export default instance;
