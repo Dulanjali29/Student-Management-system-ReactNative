@@ -161,6 +161,7 @@ const styles = StyleSheet.create({
 
     },
     inputText: {
+     
         paddingBottom: 5,
     },
     txt: {
