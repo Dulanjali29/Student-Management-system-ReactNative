@@ -5,6 +5,7 @@ import { Card } from 'react-native-paper';
 
 
 export default function MyCard({name,age,address,contact,onPressUpdate,onPressDelete}) {
+  
   return (
     <View style={{padding:15}}>
       <Card>
