@@ -16,25 +16,26 @@ export default function Registration() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const [loading, setLoading] = useState(false);
+
 
 
     const signUp = () => {
-        console.log("register");
-        console.log(name, email, password);
+        instance.post('/register', {
+            name: name,
+            email: email,
+            password: password,
 
-    //     setLoading(true);
-    //     setTimeout(() => {
-    //         try {
-    //             setLoading(false);
-    //             AsyncStorage.setItem('userData', JSON.stringify(name, email, password));
-    //             console.log("User Registration Successfull !");
-    //         } catch (error) {
+        })
+            .then(function (response) {
 
-    //         }
+                console.log(response.data);
+                console.log(" User Registration Successfull");
+            })
+            .catch(function (error) {
 
-    //     }, 3000)
-    // }
+                console.log(error);
+            })
+    }
     const close = () => {
 
     }
