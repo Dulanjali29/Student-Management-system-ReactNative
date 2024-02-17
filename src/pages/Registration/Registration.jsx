@@ -1,5 +1,5 @@
-import { View, StyleSheet, Image, ScrollView } from 'react-native'
-import { Text, TextInput } from 'react-native-paper';
+import { View, StyleSheet, Image, ScrollView,TouchableOpacity } from 'react-native'
+import { Text, TextInput ,} from 'react-native-paper';
 import { useState } from 'react';
 import React from 'react'
 import InputText from '../../common/InputText/InputText'
@@ -10,7 +10,7 @@ import instance from '../../service/AxiosOrder/AxiosOrder';
 
 
 const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
-export default function Registration() {
+export default function Registration({navigation}) {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -36,6 +36,9 @@ export default function Registration() {
                 console.log(error);
             })
     }
+    const signin=()=>{
+      navigation.navigate('Login')  
+    }
     const close = () => {
 
     }
@@ -54,7 +57,7 @@ export default function Registration() {
                 </View>
                 <View style={styles.secondView}>
                     <View style={styles.text} >
-                        <Text variant="headlineMedium" style={{ color: '#281C65' }} >SIGN UP</Text>
+                        <Text variant="headlineMedium" style={{ color: '#281C65' }} >Sign Up</Text>
                     </View>
                     <View style={styles.View}>
 
@@ -92,7 +95,7 @@ export default function Registration() {
                         <MyButton
                             mode={"contained"}
                             style={styles.btn_in}
-                            text={"SIGN UP"}
+                            text={"Sign Up"}
                             textColor={"white"}
                             buttonColor={"#281C65"}
                             onPress={signUp}
@@ -100,7 +103,7 @@ export default function Registration() {
                         />
                         <MyButton
                             style={styles.btn_in}
-                            text={"CLEAR"}
+                            text={"Clear"}
                             textColor={"white"}
                             buttonColor={"#5A8385"}
                             onPress={clear}
@@ -108,7 +111,7 @@ export default function Registration() {
                         />
                         <MyButton
                             style={styles.btn_in}
-                            text={"CLOSE"}
+                            text={"Close"}
                             textColor={"white"}
                             buttonColor={"#DC143C"}
                             onPress={close}
@@ -121,7 +124,8 @@ export default function Registration() {
                             <TouchableOpacity>
                                 <Text
                                     variant="titleLarge"
-                                    style={{ color: '#281C65', marginBottom: 10 }} > Sign In</Text>
+                                    style={{ color: '#281C65', marginBottom: 10 }}
+                                    onPress={signin} > Sign In</Text>
                             </TouchableOpacity>
 
                             {/* <MyButton

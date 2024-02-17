@@ -4,8 +4,11 @@ import { useState } from 'react';
 import React from 'react'
 import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
+import instance from '../../service/AxiosOrder/AxiosOrder';
+
 
 export default function StudentAction() {
+
   const[name,setName]=useState("");
   const[age,setAge]=useState("");
   const[address,setAddress]=useState("");
@@ -20,7 +23,7 @@ export default function StudentAction() {
 
   })
       .then(function (response) {
-
+          storeData(response);
           console.log(response.data);
           console.log(" Student Saved Successfull");
       })
@@ -29,10 +32,20 @@ export default function StudentAction() {
           console.log(error);
       })
   }
-  
+
+  const storeData = async (response) => {
+    try {
+        await AsyncStorage.setItem('my-key', response.data.token);
+        console.log(response.data.token);
+    } catch (e) {
+        // saving error
+    }
+};
+
   const clear=()=>{
     
   }
+  
   return (
     <View>
        <View style={styles.buttonicon}>
@@ -40,7 +53,7 @@ export default function StudentAction() {
                </View>
                <View style={styles.secondView}>
                    <View style={styles.text} >
-                       <Text variant="headlineMedium" style={{ color: '#281C65' }} >ADD STUDENT</Text>
+                       <Text variant="headlineMedium" style={{ color: '#281C65' }} >Add Student</Text>
                    </View>
                    <View style={styles.View}>
    
@@ -83,7 +96,7 @@ export default function StudentAction() {
                        <MyButton
                            mode={"contained"}
                            style={styles.btn_in}
-                           text={"SAVE"}
+                           text={"Save"}
                            textColor={"white"}
                            buttonColor={"#281C65"}
                            onPress={save}
@@ -91,7 +104,7 @@ export default function StudentAction() {
                        />
                        <MyButton
                        style={styles.btn_in}
-                       text={"CLEAR"}
+                       text={"Clear"}
                        textColor={"white"}
                        buttonColor={"#5A8385"}
                        onPress={clear}
@@ -111,7 +124,7 @@ const styles=StyleSheet.create({
 },
 secondView: {
     padding: 40,
-    marginTop: 120,
+    marginTop: 100,
     paddingBottom: 10
 
 },

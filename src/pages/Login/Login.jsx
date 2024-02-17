@@ -6,20 +6,24 @@ import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
 import instance from '../../service/AxiosOrder/AxiosOrder';
 
-export default function Login() {
+
+export default function Login({navigation}) {
+   
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
 
     const login = () => {
+     
         instance.post('/login', {
+
             email: email,
             password: password
         })
             .then(function (response) {
                 storeData(response);
                 console.log("login success");
-
+                navigation.navigate('Student Details')
             })
             .catch(function (error) {
                 console.log(error);
@@ -36,7 +40,7 @@ export default function Login() {
         }
     };
     const signUp = () => {
-
+        navigation.navigate('SIGN UP')
     }
 
     return (
@@ -85,7 +89,7 @@ export default function Login() {
                 <TouchableOpacity>
                     <Text
                         variant="titleLarge"
-                        style={{ color: '#281C65', marginBottom: 10 }} > Sign Up Now</Text>
+                        style={{ color: '#281C65', marginBottom: 10 }} onPress={signUp}> Sign Up Now</Text>
                 </TouchableOpacity>
             </View>
         </View>

@@ -18,14 +18,14 @@ export default function MyCard({name,age,address,contact,onPressUpdate,onPressDe
         </View>
         <View style={{padding:10,}}> 
           <MyButton
-            text={"UPDATE"}
+            text={"Update"}
             textColor={"#281C65"}
             mode={"outlined"}
             style={styles.btn}
             onPress={onPressUpdate}
           />
           <MyButton
-            text={"DELETE"}
+            text={"Delete"}
             textColor={"#281C65"}
             mode={"outlined"}
             style={styles.btn}
