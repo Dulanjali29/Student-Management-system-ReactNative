@@ -5,6 +5,8 @@ import React from 'react'
 import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
 import instance from '../../service/AxiosOrder/AxiosOrder';
+import storeData from  '../../service/AxiosOrder/AxiosOrder';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function StudentAction() {
@@ -23,7 +25,7 @@ export default function StudentAction() {
 
   })
       .then(function (response) {
-          storeData(response);
+          AsyncStorage.setItem(response)
           console.log(response.data);
           console.log(" Student Saved Successfull");
       })
@@ -33,19 +35,20 @@ export default function StudentAction() {
       })
   }
 
-  const storeData = async (response) => {
-    try {
-        await AsyncStorage.setItem('my-key', response.data.token);
-        console.log(response.data.token);
-    } catch (e) {
-        // saving error
-    }
-};
+//   const storeData = async (response) => {
+//     try {
+//         await AsyncStorage.setItem('my-key');
+//         // console.log(response.data.token);
+//     } catch (e) {
+//         // saving error
+//     }
+//     console.log('done');
+// };
 
   const clear=()=>{
     
   }
-  
+
   return (
     <View>
        <View style={styles.buttonicon}>

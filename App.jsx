@@ -18,11 +18,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-    
+      <Stack.Screen name="Student Registration" component={StudentAction} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Drawer" component={DrawerNav}  options={{headerShown:false}}/>
       <Stack.Screen name="Sign Up" component={Registration} />
-      <Stack.Screen name="Student Registration" component={StudentAction} />
+      
       <Stack.Screen name="Student Details" component={StudentSearch} />
     </Stack.Navigator>
     </NavigationContainer>
