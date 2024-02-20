@@ -48,6 +48,8 @@ export default function Registration({navigation}) {
         setPassword("");
 
     }
+    const regexEmail=/^[a-zA-Z0-9._"]+@[a-zA-Z0-9._]+\.[a.zA-Z]{2,4}$/;
+    
     return (
 
         <View style={styles.mainView}>
@@ -76,7 +78,7 @@ export default function Registration({navigation}) {
                             value={email}
                             lable={"Email"}
                             onChangeText={(val) => setEmail(val)}
-
+                                    // {regexEmail}
                         />
                         <InputText
                             style={styles.txt}

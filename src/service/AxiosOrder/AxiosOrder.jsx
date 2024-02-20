@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 // const token=localStorage.getItem('stmToken')
 
@@ -6,22 +7,22 @@ const instance = axios.create({
   // headers:{Authorization:`Bearer ${token}`}
 
 });
-const storeData = async (response) => {
+const storeData = async (key,value) => {
   try {
-    await AsyncStorage.setItem('my-key', response.data.token);
-    console.log(response.data.token);
+  await AsyncStorage.setItem(key, value);
+   
   } catch (e) {
-    // saving error
+  console.log("Error storing data",error);
   }
 };
 const getData = async (response) => {
   try {
-    const value = await AsyncStorage.getItem('my-key');
+    const value = await AsyncStorage.getItem(key);
     if (value !== null) {
-      // value previously stored
+return null;
     }
   } catch (e) {
-    // error reading value
+    console.log("Error getting data",error);
   }
 };
 export default instance;
