@@ -5,7 +5,7 @@ import React from 'react'
 import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
 import instance from '../../service/AxiosOrder/AxiosOrder';
-import { storeData, getData } from '../../service/AxiosOrder/AxiosOrder';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
@@ -18,15 +18,15 @@ export default function StudentAction() {
 
     const save = () => {
         instance.post('/student/save', {
-            name: name,
-            age: age,
-            address: address,
-            contact: contact,
+            student_name: name,
+            student_age: age,
+            student_address: address,
+            student_contact: contact
 
         })
             .then(function (response) {
-                storeData(name,age,address,contact,"true");
-                console.log(response.data);
+               
+                console.log(response);
                 console.log(" Student Saved Successfull");
             })
             .catch(function (error) {

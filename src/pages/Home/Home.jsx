@@ -8,9 +8,9 @@ export default function Home({ navigation }) {
     }
     return (
         <View style={styles.mainView}>
-            <View style={{justifyContent:'between',flexDirection:'row',marginTop:30,marginLeft:40}}>
+            <View style={{ justifyContent: 'between', flexDirection: 'row', marginTop: 30, marginLeft: 40, flex: 1 }}>
                 <MyButton
-                   
+
                     mode={"contained"}
                     style={styles.btn}
                     text={"Student"}
@@ -28,10 +28,18 @@ export default function Home({ navigation }) {
                     buttonColor={"#281C65"}
                     onPress={studentView}
                 />
-                <MyButton
 
-                />
+
+
+            </View>
+            <View style={{ justifyContent: 'between', flexDirection: 'row', marginTop: 0, marginLeft: 40 }}>
                 <MyButton
+                    mode={"contained"}
+                    style={styles.btn}
+                    text={"Courses"}
+                    textColor={"white"}
+                    buttonColor={"#281C65"}
+                    onPress={studentView}
 
                 />
             </View>
@@ -50,11 +58,11 @@ const styles = StyleSheet.create({
     },
     btn: {
         padding: 25,
-       
+
         marginBottom: 0,
-    
+
         height: '50%',
-       textAlign:'center',
-       marginRight:30
+        textAlign: 'center',
+        marginRight: 30
     },
 })

@@ -30,6 +30,7 @@ export default function Registration({navigation}) {
 
                 console.log(response.data);
                 console.log(" User Registration Successfull");
+                navigation.navigate('Login');
             })
             .catch(function (error) {
 

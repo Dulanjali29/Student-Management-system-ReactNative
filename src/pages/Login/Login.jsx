@@ -23,7 +23,9 @@ export default function Login({ navigation }) {
         })
             .then(function (response) {
                 storeData(response);
+          
                 console.log("login success");
+                console.log(response.data.token);
                 navigation.navigate('Drawer')
             })
             .catch(function (error) {
@@ -35,6 +37,7 @@ export default function Login({ navigation }) {
     const storeData = async (response) => {
         try {
             await AsyncStorage.setItem('my-key', response.data.token);
+          
             console.log(response.data.token);
         } catch (e) {
             // saving error

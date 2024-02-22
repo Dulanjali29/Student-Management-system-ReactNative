@@ -15,7 +15,7 @@ export default function DrawerNav() {
        <Drawer.Screen name="Home" component={Home} />
     <Drawer.Screen name="Student Registration" component={StudentAction} />
     <Drawer.Screen name="Student Details" component={StudentSearch} />
-    <Drawer.Screen name="Logout" component={logout} />
+    {/* <Drawer.Screen name="Logout" component={logout} /> */}
   </Drawer.Navigator>
   )
 } 
