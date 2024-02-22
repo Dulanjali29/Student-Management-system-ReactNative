@@ -24,9 +24,9 @@ export default function Login({ navigation }) {
         })
             .then(function (response) {
                 storeData(response);
-          
+                
                 console.log("login success");
-                console.log(response.data.token);
+                   
                
             })
             .catch(function (error) {
@@ -38,7 +38,7 @@ export default function Login({ navigation }) {
     const storeData = async (response) => {
         try {
             await AsyncStorage.setItem('my-key', response.data.token);
-          
+         
             // console.log(response.data.token);
             navigation.navigate('Drawer')
         } catch (e) {
@@ -48,7 +48,12 @@ export default function Login({ navigation }) {
     const signUp = () => {
         navigation.navigate('Sign Up')
     }
+    const clearFields = () => {
+        setName("");
+        setEmail("");
+        setPassword("");
 
+    }
     return (
         <View style={styles.mainView}>
             {/* <ScrollView> */}
