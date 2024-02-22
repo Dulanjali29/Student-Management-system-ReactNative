@@ -28,7 +28,7 @@ export default function Registration({navigation}) {
         })
             .then(function (response) {
 
-                console.log(response.data);
+                // console.log(response.data);
                 console.log(" User Registration Successfull");
                 navigation.navigate('Login');
             })

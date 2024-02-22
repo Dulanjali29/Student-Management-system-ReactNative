@@ -39,7 +39,7 @@ export default function Login({ navigation }) {
         try {
             await AsyncStorage.setItem('my-key', response.data.token);
           
-            console.log(response.data.token);
+            // console.log(response.data.token);
             navigation.navigate('Drawer')
         } catch (e) {
             // saving error
