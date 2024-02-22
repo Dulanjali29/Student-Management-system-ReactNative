@@ -8,7 +8,7 @@ export default function Home({ navigation }) {
     }
     return (
         <View style={styles.mainView}>
-            <View style={{ justifyContent: 'between', flexDirection: 'row', marginTop: 30, marginLeft: 40, flex: 1 }}>
+            <View style={{ justifyContent: 'between', flexDirection: 'row', marginTop: 30, marginLeft: 40,}}>
                 <MyButton
 
                     mode={"contained"}
@@ -32,7 +32,7 @@ export default function Home({ navigation }) {
 
 
             </View>
-            <View style={{ justifyContent: 'between', flexDirection: 'row', marginTop: 0, marginLeft: 40 }}>
+            {/* <View style={{ justifyContent: 'between', flexDirection: 'row', marginTop: 0, marginLeft: 40 }}>
                 <MyButton
                     mode={"contained"}
                     style={styles.btn}
@@ -42,7 +42,7 @@ export default function Home({ navigation }) {
                     onPress={studentView}
 
                 />
-            </View>
+            </View> */}
 
         </View>
     )

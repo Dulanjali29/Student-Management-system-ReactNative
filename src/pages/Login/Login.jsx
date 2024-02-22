@@ -6,6 +6,7 @@ import InputText from '../../common/InputText/InputText'
 import MyButton from '../../common/MyButton/MyButton';
 import instance from '../../service/AxiosOrder/AxiosOrder';
 import { ScrollView } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function Login({ navigation }) {
@@ -26,7 +27,7 @@ export default function Login({ navigation }) {
           
                 console.log("login success");
                 console.log(response.data.token);
-                navigation.navigate('Drawer')
+               
             })
             .catch(function (error) {
                 console.log(error);
@@ -39,6 +40,7 @@ export default function Login({ navigation }) {
             await AsyncStorage.setItem('my-key', response.data.token);
           
             console.log(response.data.token);
+            navigation.navigate('Drawer')
         } catch (e) {
             // saving error
         }

@@ -49,7 +49,7 @@ export default function Registration({navigation}) {
         setPassword("");
 
     }
-    const regexEmail=/^[a-zA-Z0-9._"]+@[a-zA-Z0-9._]+\.[a.zA-Z]{2,4}$/;
+    // const regexEmail=/^[a-zA-Z0-9._"]+@[a-zA-Z0-9._]+\.[a.zA-Z]{2,4}$/;
     
     return (
 
