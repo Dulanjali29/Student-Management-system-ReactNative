@@ -10,6 +10,7 @@ import DrawerNav from './src/component/DrawerNav/DrawerNav';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/pages/Home/Home';
+import DiaogBox from './src/component/DialogBox/DiaogBox';
 
 
 const Stack = createStackNavigator();
@@ -19,13 +20,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      
-      <Stack.Screen name="Login" component={Login} />
+     
+      {/* <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Drawer" component={DrawerNav}  options={{headerShown:false}}/>
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Sign Up" component={Registration} />
+      <Stack.Screen name="Sign Up" component={Registration} /> */}
       {/* <Stack.Screen name="Student Registration" component={StudentAction} /> */}
-      {/* <Stack.Screen name="Student Details" component={StudentSearch} /> */}
+      <Stack.Screen name="Student Details" component={StudentSearch} />
     </Stack.Navigator>
     </NavigationContainer>
    

@@ -1,12 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import MyButton from '../../common/MyButton/MyButton'
-import { Card } from 'react-native-paper';
+import { Card, PaperProvider } from 'react-native-paper';
 
 
 export default function MyCard({name,age,address,contact,onPressUpdate,onPressDelete}) {
-  
+
+  const[visible,setVisible]=useState(false);
+
   return (
+    <PaperProvider>
     <View style={{padding:15}}>
       <Card>
 
@@ -34,6 +37,7 @@ export default function MyCard({name,age,address,contact,onPressUpdate,onPressDe
         </View>
       </Card>
     </View>
+    </PaperProvider>
   )
 }
 const styles = StyleSheet.create({

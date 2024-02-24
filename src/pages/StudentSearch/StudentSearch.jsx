@@ -1,12 +1,16 @@
-import { View, Text, StyleSheet,FlatList } from 'react-native'
-import React, { useState,useEffect } from 'react'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
+import React, { useState, useEffect } from 'react'
 import instance from '../../service/AxiosOrder/AxiosOrder';
 import Card from '../../component/MyCard/MyCard';
+import DiaogBox from '../../component/DialogBox/DiaogBox';
+import { PaperProvider } from 'react-native-paper';
 
 export default function StudentSearch() {
 
-  const [data,setData]=useState("");
-
+  const [data, setData] = useState("");
+  const [id, setId] = useState("");
+  const [visible, setVisible] = useState(false);
+  const [object, setObject] = useState("");
 
   const getStudentData = () => {
     instance({
@@ -33,30 +37,66 @@ export default function StudentSearch() {
       });
   }
   useEffect(() => {
-    getStudentData(setData)
+    getStudentData()
   }, []);
 
+  const deleteStu = (id) => {
+    instance.delete('/student/delete/' + id)
+
+      .then(response => {
+        console.log(response)
+
+        console.log("student deleted !");
+        getStudentData()
+
+      })
+      .catch(error => {
+        console.error(error);
+
+      });
+  }
+
+  const updateStu = (val) => {
+    setObject(val)
+    setVisible(true)
+  }
+
+  const changeData = () => {
+    getStudentData()
+    setVisible(false)
+  }
 
   return (
-    <View >
-      <View style={{alignItems:'center',backgroundColor:'#281C65',padding:10,marginTop:0}}>
-        <Text variant="headlineMedium" style={{ color: 'white' }} >Student Details </Text>
+    <PaperProvider>
+      <DiaogBox
+        id={id}
+        visible={visible}
+        object={object}
+        hideDialog={() => { setVisible(false) }}
+        changeData={changeData}
+      />
+      <View >
+        <View style={{ alignItems: 'center', backgroundColor: '#281C65', padding: 10, marginTop: 0 }}>
+          <Text variant="headlineMedium" style={{ color: 'white' }} >Student Details </Text>
+        </View>
+
+        <FlatList
+          data={data}
+          renderItem={({ item }) => (
+            <Card
+
+              name={item.name}
+              age={item.age}
+              address={item.address}
+              contact={item.contact}
+              onPressDelete={() => deleteStu(item.id)}
+              onPressUpdate={() => updateStu(item)}
+            />
+          )}
+
+        />
+        <Card />
       </View>
-      
-      <FlatList
-                        data={data}
-                        renderItem={({ item }) => (
-                            <Card
-                                name={item.name}
-                                age={item.age}
-                                address={item.address}
-                                contact={item.contact}
-                               
-                            />
-                        )}
-                       
-                    />
-      <Card />
-    </View>
+    </PaperProvider>
   )
 }
