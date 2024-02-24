@@ -4,39 +4,40 @@ import MyButton from '../../common/MyButton/MyButton'
 import { Card, PaperProvider } from 'react-native-paper';
 
 
-export default function MyCard({name,age,address,contact,onPressUpdate,onPressDelete}) {
+export default function MyCard({ name, age, address, contact, onPressUpdate, onPressDelete }) {
 
-  const[visible,setVisible]=useState(false);
+  const [visible, setVisible] = useState(false);
 
   return (
     <PaperProvider>
-    <View style={{padding:15}}>
-      <Card>
+      <View style={{ padding: 15 }}>
+        <Card>
 
-        <View>
-          <Text style={styles.text}>Name    : {name} </Text>
-          <Text style={styles.text}>Age        : {age} </Text>
-          <Text style={styles.text}>Address : {address} </Text>
-          <Text style={styles.text}>Contact  : {contact}</Text>
-        </View>
-        <View style={{padding:10,}}> 
-          <MyButton
-            text={"Update"}
-            textColor={"#281C65"}
-            mode={"outlined"}
-            style={styles.btn}
-            onPress={onPressUpdate}
-          />
-          <MyButton
-            text={"Delete"}
-            textColor={"#281C65"}
-            mode={"outlined"}
-            style={styles.btn}
-            onPress={onPressDelete}
-          />
-        </View>
-      </Card>
-    </View>
+          <View>
+            <Text style={styles.text}>Name    : {name} </Text>
+            <Text style={styles.text}>Age        : {age} </Text>
+            <Text style={styles.text}>Address : {address} </Text>
+            <Text style={styles.text}>Contact  : {contact}</Text>
+          </View>
+          
+          <View style={{ padding: 10, }}>
+            <MyButton
+              text={"Update"}
+              textColor={"#281C65"}
+              mode={"outlined"}
+              style={styles.btn}
+              onPress={onPressUpdate}
+            />
+            <MyButton
+              text={"Delete"}
+              textColor={"#281C65"}
+              mode={"outlined"}
+              style={styles.btn}
+              onPress={onPressDelete}
+            />
+          </View>
+        </Card>
+      </View>
     </PaperProvider>
   )
 }
@@ -51,10 +52,10 @@ const styles = StyleSheet.create({
     marginTop: 10
 
   },
-  btn:{
-    borderColor:'#281C65',
-    marginBottom:10,
-   
+  btn: {
+    borderColor: '#281C65',
+    marginBottom: 10,
+
   }
 
 })
