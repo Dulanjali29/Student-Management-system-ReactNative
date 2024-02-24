@@ -10,7 +10,7 @@ export default function StudentSearch() {
   const [data, setData] = useState("");
   const [id, setId] = useState("");
   const [visible, setVisible] = useState(false);
-  const [object, setObject] = useState("");
+  const [studata, setStuData] = useState("");
 
   const getStudentData = () => {
     instance({
@@ -57,7 +57,7 @@ export default function StudentSearch() {
   }
 
   const updateStu = (val) => {
-    setObject(val)
+    setStuData(val)
     setVisible(true)
   }
 
@@ -71,7 +71,7 @@ export default function StudentSearch() {
       <DiaogBox
         id={id}
         visible={visible}
-        object={object}
+        studata={studata}
         hideDialog={() => { setVisible(false) }}
         changeData={changeData}
       />

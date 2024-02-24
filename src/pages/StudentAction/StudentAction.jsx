@@ -28,6 +28,7 @@ export default function StudentAction() {
                
                 console.log(response);
                 console.log(" Student Saved Successfull");
+                clear();
             })
             .catch(function (error) {
 
