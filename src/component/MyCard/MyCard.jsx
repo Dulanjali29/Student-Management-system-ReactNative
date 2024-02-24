@@ -19,8 +19,8 @@ export default function MyCard({ name, age, address, contact, onPressUpdate, onP
             <Text style={styles.text}>Address : {address} </Text>
             <Text style={styles.text}>Contact  : {contact}</Text>
           </View>
-          
-          <View style={{ padding: 10, }}>
+
+          <View style={{ padding: 10,flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginRight: 45 }}>
             <MyButton
               text={"Update"}
               textColor={"#281C65"}
@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
   btn: {
     borderColor: '#281C65',
     marginBottom: 10,
-
+    width:'150%',
+    
   }
 
 })
